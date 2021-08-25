@@ -1,0 +1,15 @@
+## Our Vision Statement
+
+My Grocery Pal is an application that automates and innovates the grocery shopping experience by offering store options based on user needs. Users provide their personal grocery list, and My Grocery Pal will quickly offer store options, enough to tailor any current user demand. These options can range from cheapest price, to closest location, or even to the best reviewed local stores. 
+
+The application will feature the ability to scroll through data about each option, allowing users to compare and contrast the pros and cons between different options. The data displayed within each option will be concise and filled with only enough information to allow for quick and efficient comparisons. Each option will contain information such as total price, distance, and reviews. With this knowledge at hand, users can freely choose an option that best satisfies their demands.
+
+Users will be able to browse through many provided or user-created recipes. Any wanted recipes can then be selected, and a grocery list will be created seamlessly from the recipe’s ingredient list. Trying and experimenting with new recipes can now be done with ease. Through many complementary features like these, My Grocery Pal will be the go-to application for any grocery needs.
+
+My Grocery Pal is targeted for all people who buy groceries, including chefs of all ages and skill levels, with a main focus on those with a busy lifestyle. This includes but is not limited to, working individuals, students, and people with big families. The simple to use and automated functionality of My Grocery Pal accommodates those with busy lives. With one press of a button, users will be provided with a plethora of options to satisfy any current criteria one would require.
+
+The importance of My Grocery Pal is to allow users to save not only money, but also the most valuable resource, their time. Shopping for groceries is an essential, time consuming chore for everyone. With My Grocery Pal, the monotonous process of individually sifting through advantages and disadvantages of potential grocery choices will be automated and streamlined. A feature so desperately needed in our busy lifestyles.
+
+This application is intended to be a mobile application with support for iOS and android devices. Future releases could support compatibility with MacOs and Windows.
+
+The project will be considered a success based on two criteria. First, users will be allowed to submit their honest opinion about the application and will be able to provide ratings from 1 - 5 on the specifics of the application through an evaluation form, with 1 being the lowest rating, and 5 being the highest. Second, users will also have an option to give an overall rating on their respective app-store. If the average app rating is found to be 4 or greater, or if the average evaluation form rating is greater than 4, then the application will be considered a success.

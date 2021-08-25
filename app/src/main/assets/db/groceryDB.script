@@ -1,0 +1,163 @@
+SET DATABASE UNIQUE NAME HSQLDB781E29EB81
+SET DATABASE GC 0
+SET DATABASE DEFAULT RESULT MEMORY ROWS 0
+SET DATABASE EVENT LOG LEVEL 0
+SET DATABASE TRANSACTION CONTROL LOCKS
+SET DATABASE DEFAULT ISOLATION LEVEL READ COMMITTED
+SET DATABASE TRANSACTION ROLLBACK ON CONFLICT TRUE
+SET DATABASE TEXT TABLE DEFAULTS ''
+SET DATABASE SQL NAMES FALSE
+SET DATABASE SQL REFERENCES FALSE
+SET DATABASE SQL SIZE TRUE
+SET DATABASE SQL TYPES FALSE
+SET DATABASE SQL TDC DELETE TRUE
+SET DATABASE SQL TDC UPDATE TRUE
+SET DATABASE SQL CONCAT NULLS TRUE
+SET DATABASE SQL UNIQUE NULLS TRUE
+SET DATABASE SQL CONVERT TRUNCATE TRUE
+SET DATABASE SQL AVG SCALE 0
+SET DATABASE SQL DOUBLE NAN TRUE
+SET FILES WRITE DELAY 500 MILLIS
+SET FILES BACKUP INCREMENT TRUE
+SET FILES CACHE SIZE 10000
+SET FILES CACHE ROWS 50000
+SET FILES SCALE 32
+SET FILES LOB SCALE 32
+SET FILES DEFRAG 0
+SET FILES NIO TRUE
+SET FILES NIO SIZE 256
+SET FILES LOG TRUE
+SET FILES LOG SIZE 50
+SET FILES CHECK 1565
+SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
+CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
+ALTER USER SA SET LOCAL TRUE
+CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+CREATE MEMORY TABLE PUBLIC.STORES(NAME VARCHAR(50) PRIMARY KEY,DISTANCE DECIMAL(10,2),REVIEW DECIMAL(10,7),AMOUNTOFREVIEW INTEGER,LOCAL BOOLEAN)
+CREATE MEMORY TABLE PUBLIC.STOREINVENTORIES(ITEMNAME VARCHAR(20), STORENAME VARCHAR(20),PRIMARY KEY(ITEMNAME,STORENAME),AMOUNT INTEGER,PRICE DECIMAL(10,2),TYPE VARCHAR(20))
+CREATE MEMORY TABLE PUBLIC.GROCERYLISTITEMS(NAME VARCHAR(20) PRIMARY KEY, TYPE VARCHAR(20))
+CREATE MEMORY TABLE PUBLIC.RECIPES(NAME VARCHAR(100) PRIMARY KEY, DESC VARCHAR(255))
+CREATE MEMORY TABLE PUBLIC.RECIPEINGREDIENTS(GNAME VARCHAR(20), RNAME VARCHAR(20), PRIMARY KEY(GNAME, RNAME), QUANTITY INTEGER, FOREIGN KEY(RNAME) REFERENCES PUBLIC.RECIPES(NAME) ON DELETE CASCADE, FOREIGN KEY(GNAME) REFERENCES PUBLIC.GROCERYLISTITEMS(NAME) ON DELETE SET NULL)
+CREATE MEMORY TABLE PUBLIC.RECIPESTEPS(STEPNUM INTEGER NOT NULL, RNAME VARCHAR(100), PRIMARY KEY(STEPNUM, RNAME), STEP VARCHAR(255), FOREIGN KEY(RNAME) REFERENCES PUBLIC.RECIPES(NAME) ON DELETE CASCADE)
+CREATE MEMORY TABLE PUBLIC.ACCOUNT(USERNAME VARCHAR(20) PRIMARY KEY,PASSWORD VARCHAR(20),NAME VARCHAR(20))
+ALTER SEQUENCE SYSTEM_LOBS.LOB_ID RESTART WITH 1
+SET DATABASE DEFAULT INITIAL SCHEMA PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.SQL_IDENTIFIER TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.YES_OR_NO TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.TIME_STAMP TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CARDINAL_NUMBER TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CHARACTER_DATA TO PUBLIC
+GRANT DBA TO SA
+SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+SET SCHEMA PUBLIC
+INSERT INTO STORES VALUES ('WalMart at 251 CherryGrove Dr.',50.623,4.123,1976,false)
+INSERT INTO STORES VALUES ('SuperStore at 123 Chespin St.',30.645,3.834,176,false)
+INSERT INTO STORES VALUES ('Sobeys at 254 Chespin St.',30.676,3.134,1746,true)
+INSERT INTO STORES VALUES ('Safeway at 567 Riverstone St.',20.623,2.523,776,true)
+INSERT INTO STOREINVENTORIES VALUES('Apple','WalMart at 251 CherryGrove Dr.',600,2.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Oranges','WalMart at 251 CherryGrove Dr.',60,3.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Grapes','WalMart at 251 CherryGrove Dr.',670,4.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Milk','WalMart at 251 CherryGrove Dr.',32,10.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Ice Cream','WalMart at 251 CherryGrove Dr.',31,10.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Wheat','WalMart at 251 CherryGrove Dr.',70,22.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Wheat Flour','WalMart at 251 CherryGrove Dr.',80,19.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Bread','WalMart at 251 CherryGrove Dr.',65,25.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Chicken','WalMart at 251 CherryGrove Dr.',35,43.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Fish','WalMart at 251 CherryGrove Dr.',45,45.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Shrimp','WalMart at 251 CherryGrove Dr.',50,55.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Apple','SuperStore at 123 Chespin St.',570,4.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Oranges','SuperStore at 123 Chespin St.',170,2.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Milk','SuperStore at 123 Chespin St.',670,7.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Ice Cream','SuperStore at 123 Chespin St.',80,20.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Cream','SuperStore at 123 Chespin St.',120,20.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Yogurt','SuperStore at 123 Chespin St.',65,29.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Bread','SuperStore at 123 Chespin St.',80,15.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Rice','SuperStore at 123 Chespin St.',70,35.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Flour','SuperStore at 123 Chespin St.',90,30.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Chicken','SuperStore at 123 Chespin St.',55,47.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Shrimp','SuperStore at 123 Chespin St.',65,40.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Lobster','SuperStore at 123 Chespin St.',80,32.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Apple','Sobeys at 254 Chespin St.',520,3.59,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Grapes','Sobeys at 254 Chespin St.',150,2.59,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Watermelon','Sobeys at 254 Chespin St.',520,6.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Carrots','Sobeys at 254 Chespin St.',250,4.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Ice Cream','Sobeys at 254 Chespin St.',50,15.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Cream','Sobeys at 254 Chespin St.'55,17.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Milk','Sobeys at 254 Chespin St.',70,16.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Yogurt','Sobeys at 254 Chespin St.',90,22.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Wheat','Sobeys at 254 Chespin St.',70,21.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Wheat Flour','Sobeys at 254 Chespin St.',100,25.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Bread','Sobeys at 254 Chespin St.',95,24.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Shrimp','Sobeys at 254 Chespin St.',45,22.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Lobster','Sobeys at 254 Chespin St.',85,26.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Fish','Sobeys at 254 Chespin St.',90,23.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Butter','Sobeys at 254 Chespin St.',90,13.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Apple','Safeway at 567 Riverstone St.',470,1.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Grapes','Safeway at 567 Riverstone St.',30,3.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Watermelon','Safeway at 567 Riverstone St.',370,6.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Peaches','Safeway at 567 Riverstone St.'270,7.99,'Fruit And Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Ice Cream','Safeway at 567 Riverstone St.',95,22.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Cream','Safeway at 567 Riverstone St.',85,18.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Milk','Safeway at 567 Riverstone St.',90,19.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Yogurt','Safeway at 567 Riverstone St.',75,26.99,'Dairy')
+INSERT INTO STOREINVENTORIES VALUES('Mangoes','Safeway at 567 Riverstone St.',85,2.99,'Fruit and Vegetables')
+INSERT INTO STOREINVENTORIES VALUES('Wheat','Safeway at 567 Riverstone St.',45,22.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Wheat Flour','Safeway at 567 Riverstone St.',85,26.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Rice','Safeway at 567 Riverstone St.',90,23.99,'Grains')
+INSERT INTO STOREINVENTORIES VALUES('Chicken','Safeway at 567 Riverstone St.',45,22.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Shrimp','Safeway at 567 Riverstone St.',85,26.99,'Meats')
+INSERT INTO STOREINVENTORIES VALUES('Fish','Safeway at 567 Riverstone St.',90,23.99,'Meats')
+INSERT INTO GROCERYLISTITEMS VALUES('Apple','Fruit And Vegetables')
+INSERT INTO GROCERYLISTITEMS VALUES('Oranges','Fruit And Vegetables')
+INSERT INTO GROCERYLISTITEMS VALUES('Grapes','Fruit And Vegetables')
+INSERT INTO GROCERYLISTITEMS VALUES('Watermelon','Fruit And Vegetables')
+INSERT INTO GROCERYLISTITEMS VALUES('Carrots','Fruit And Vegetables')
+INSERT INTO GROCERYLISTITEMS VALUES('Mangoes','Fruit And Vegetables')
+INSERT INTO GROCERYLISTITEMS VALUES('Peaches','Fruit And Vegetables')
+INSERT INTO GROCERYLISTITEMS VALUES('Milk','Dairy')
+INSERT INTO GROCERYLISTITEMS VALUES('Ice Cream','Dairy')
+INSERT INTO GROCERYLISTITEMS VALUES('Butter','Dairy')
+INSERT INTO GROCERYLISTITEMS VALUES('Cream','Dairy')
+INSERT INTO GROCERYLISTITEMS VALUES('Yogurt','Dairy')
+INSERT INTO GROCERYLISTITEMS VALUES('Chicken','Meats')
+INSERT INTO GROCERYLISTITEMS VALUES('Fish','Meats')
+INSERT INTO GROCERYLISTITEMS VALUES('Shrimp','Meats')
+INSERT INTO GROCERYLISTITEMS VALUES('Lobster','Meats')
+INSERT INTO GROCERYLISTITEMS VALUES('Rice','Grains')
+INSERT INTO GROCERYLISTITEMS VALUES('Flour','Grains')
+INSERT INTO GROCERYLISTITEMS VALUES('Bread','Grains')
+INSERT INTO GROCERYLISTITEMS VALUES('Wheat Flour','Grains')
+INSERT INTO RECIPES VALUES('Watermelon Ice Cream', 'Two Ingredient Watermelon Ice Cream is the perfect creamy, healthy treat that's bursting with the flavor or fresh watermelon and is easy to make.')
+INSERT INTO RECIPEINGREDIENTS VALUES('Watermelon', 'Watermelon Ice Cream', 1)
+INSERT INTO RECIPEINGREDIENTS VALUES('Milk', 'Watermelon Ice Cream', 1)
+INSERT INTO RECIPESTEPS VALUES(1,'Watermelon Ice Cream', '1. Freeze the watermelon cuber in a single layer on a piece parchment paper or foil for at least 3-4 hours.')
+INSERT INTO RECIPESTEPS VALUES(2,'Watermelon Ice Cream', '2. When ready to make, add half the watermelon to the food processor and blend until smooth. Scrape down the sides and add the milk. Add the remaining watermelon and blend until smooth and creamy.')
+INSERT INTO RECIPESTEPS VALUES(3,'Watermelon Ice Cream', '3. Eat immediately or freeze for 2-3 hours for a firmer texture. If frozen longer, leave it out for 30 minutes before eating so it can soften up and become creamy.')
+INSERT INTO RECIPES VALUES('Orange Mango Carrot Smoothie', 'A healthy and refreshing treat for 2 servings.')
+INSERT INTO RECIPEINGREDIENTS VALUES('Oranges', 'Orange Mango Carrot Smoothie', 2)
+INSERT INTO RECIPEINGREDIENTS VALUES('Mangoes', 'Orange Mango Carrot Smoothie', 1)
+INSERT INTO RECIPEINGREDIENTS VALUES('Carrots', 'Orange Mango Carrot Smoothie', 3)
+INSERT INTO RECIPESTEPS VALUES(1,'Orange Mango Carrot Smoothie', '1. Place the oranges, mango, and carrots in a blender or food processor and blend until just combined.')
+INSERT INTO RECIPESTEPS VALUES(2,'Orange Mango Carrot Smoothie', '2. Add ice and continue to blend until the mixture is smooth.')
+INSERT INTO RECIPESTEPS VALUES(3,'Orange Mango Carrot Smoothie', '3. Serve immediately. Enjoy!')
+INSERT INTO ACCOUNT VALUES('james','password','owl')
+INSERT INTO ACCOUNT VALUES('gerald','12345678','dog')
+INSERT INTO ACCOUNT VALUES('bringing','87654321','cat')
+INSERT INTO ACCOUNT VALUES('aasdfewaawe','takingsad','carrot')
+INSERT INTO RECIPES VALUES('Butter Chicken', 'Aromatic golden chicken pieces in an incredible creamy curry sauce, this Butter Chicken recipe is one of the best you will try!')
+INSERT INTO RECIPEINGREDIENTS VALUES('Chicken', 'Butter Chicken', 2)
+INSERT INTO RECIPEINGREDIENTS VALUES('Butter', 'Butter Chicken', 1)
+INSERT INTO RECIPEINGREDIENTS VALUES('Yogurt', 'Butter Chicken', 1)
+INSERT INTO RECIPESTEPS VALUES(1,'Butter Chicken', '1. Marinate chicken with yogurt for 20 minutes, or overnight if time allows.')
+INSERT INTO RECIPESTEPS VALUES(2,'Butter Chicken', '2. Sear chicken in a skillet or pan. Keep those charred bits on the pan to make your sauce. Browned bits = flavour.')
+INSERT INTO RECIPESTEPS VALUES(3,'Butter Chicken', '3. Finally, make your curry sauce in the same skillet')
+INSERT INTO RECIPESTEPS VALUES(4,'Butter Chicken', '4. Serve over rice or enjoy it right away!')
+INSERT INTO RECIPES VALUES('Creamy Homemade Yogurt', 'Homemade yogurt is a snap to make. All you really need is good quality milk, a few spoonfuls of your favorite plain yogurt to use as a starter culture, and some time to let it sit.')
+INSERT INTO RECIPEINGREDIENTS VALUES('Milk', 'Creamy Homemade Yogurt', 2)
+INSERT INTO RECIPEINGREDIENTS VALUES('Cream', 'Creamy Homemade Yogurt', 1)
+INSERT INTO RECIPEINGREDIENTS VALUES('Yogurt', 'Creamy Homemade Yogurt', 4)
+INSERT INTO RECIPESTEPS VALUES(1,'Creamy Homemade Yogurt', '1. Add milk and cream, to a pot and bring to a bare simmer, until bubbles form around the edges, 180 to 200 degrees. Stir the milk occasionally as it heats.')
+INSERT INTO RECIPESTEPS VALUES(2,'Creamy Homemade Yogurt', '2. Remove pot from heat and let cool until it feels pleasantly warm when you stick your pinkie in the milk for 10 seconds, 110 to 120 degrees.')
+INSERT INTO RECIPESTEPS VALUES(3,'Creamy Homemade Yogurt', '3. Transfer 1/2 cup of warm milk to a small bowl and whisk in yogurt until smooth. Stir yogurt-milk mixture back into remaining pot of warm milk. Cover pot with a large lid. Keep pot warm.')
+INSERT INTO RECIPESTEPS VALUES(4,'Creamy Homemade Yogurt', '4. Let yogurt sit for 6 to 12 hours, until the yogurt is thick and tangy. Transfer the pot to the refrigerator and chill for at least another 4 hours.')

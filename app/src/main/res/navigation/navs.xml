@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navs"
+    app:startDestination="@id/cartFragment">
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.MiddleButton_Cart.CartFragment"
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/action_cartFragment_to_accountFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_noStoresFragment"
+            app:destination="@id/noStoresFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_output"
+            app:destination="@id/output" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.RightButton_Recipe.RecipeFragment"
+        android:label="RecipeFragment" >
+        <action
+            android:id="@+id/action_recipeFragment_to_recipeDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:destination="@id/recipeDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeItemFragment"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.LeftButton_Browse.GroceryItemsList.BrowseGroceryListItemsFragment"
+        android:label="fragment_store_item"
+        tools:layout="@layout/fragment_store_list" >
+        <action
+            android:id="@+id/action_storeItemFragment_to_fragmentBrowseV2"
+            app:destination="@id/fragmentBrowseV2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentBrowseV2"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.LeftButton_Browse.BrowseFragment"
+        android:label="activity_fragment_browse_v2"
+        tools:layout="@layout/fragment_browse" >
+        <action
+            android:id="@+id/action_fragmentBrowseV2_to_storeItemFragment"
+            app:destination="@id/storeItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.MiddleButton_Cart.Account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_cartFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetails"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.RightButton_Recipe.RecipeDetails"
+        android:label="fragment_recipe_details"
+        tools:layout="@layout/fragment_recipe_details" >
+        <action
+            android:id="@+id/action_recipeDetails_to_recipeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/action_recipeDetails_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noStoresFragment"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.MiddleButton_Cart.StoreList.NoStoresFragment"
+        android:label="fragment_no_stores"
+        tools:layout="@layout/fragment_no_stores" >
+        <action
+            android:id="@+id/action_noStoresFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/output"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.MiddleButton_Cart.StoreList.BestStores"
+        android:label="output" >
+        <action
+            android:id="@+id/action_outputToStoreStats"
+            app:destination="@id/storeStatistics"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top" />
+        <action
+            android:id="@+id/action_output_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeStatistics"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.MiddleButton_Cart.StoreList.StoreStatistics.StoreStatistics"
+        android:label="StoreStatistics" >
+        <action
+            android:id="@+id/action_storeStatsToOutput"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:destination="@id/output" />
+        <action
+            android:id="@+id/action_storeStatistics_to_listOfItemsPerStore"
+            app:destination="@id/listOfItemsPerStore" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.MiddleButton_Cart.Account.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_loginFragment_self"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.MiddleButton_Cart.Account.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfItemsPerStore"
+        android:name="comp3350.MyGroceryPal.myapplication.NewUI.MainActivityStartScreen.BottomNavBarFragments.MiddleButton_Cart.StoreList.StoreStatistics.ListOfItems.ListOfItemsPerStore"
+        android:label="fragment_list_of_items_per_store"
+        tools:layout="@layout/fragment_list_of_items_per_store" >
+        <action
+            android:id="@+id/action_listOfItemsPerStore_to_storeStatistics"
+            app:destination="@id/storeStatistics" />
+    </fragment>
+</navigation>

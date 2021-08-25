@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+recipe_buttons.xml
+
+University of Manitoba
+Comp 3350 A02 Software Engineering 1, Group 2
+Instructor: Jon Boisvert
+Written by Elieser Capillar
+
+Iteration 1, GUI Version 1.0.0
+
+Defines the attributes for a button within the fragments.
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@color/white"/>
+    <corners android:radius="20dp"/>
+
+</shape>

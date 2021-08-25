@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowLayout"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+
+        android:bottom="8dp"
+        android:padding="48sp"
+        android:top="8dp">
+
+        <!--
+        <TextView
+            android:id="@+id/Option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Option"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+            -->
+
+
+        <TextView
+            android:id="@+id/allLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Local"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/numStores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Number of Stores"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/averageReview"
+            app:layout_constraintTop_toBottomOf="@+id/averageReview" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Distance"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/allLocal"
+            app:layout_constraintTop_toBottomOf="@+id/allLocal" />
+
+        <TextView
+            android:id="@+id/averageReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="AvgReview"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/distance"
+            app:layout_constraintTop_toBottomOf="@+id/distance" />
+
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/numStores"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/allLocal" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

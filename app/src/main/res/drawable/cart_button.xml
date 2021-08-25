@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+cart_button.xml
+
+University of Manitoba
+Comp 3350 A02 Software Engineering 1, Group 2
+Instructor: Jon Boisvert
+Written by Elieser Capillar
+
+Iteration 1, GUI Version 1.0.0
+
+Defines the attributes for the shopping cart button within the Browse fragment.
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#66B9F9"/>
+
+    <corners android:radius="20dp"/>
+
+
+</shape>
+
