@@ -10,7 +10,7 @@ My Grocery Pal is an application that automates and innovates the grocery shoppi
 2. Open the unzipped file/project on Android Studio;
 3. Build and run the app.
 
-## [Vision](https://code.cs.umanitoba.ca/3350-winter-2021-a02/group-2/my-group-pal/-/blob/master/VISION.md)
+## [Vision](https://github.com/wynonagcc/my-grocery-pal/blob/master/VISION.md)
 
 ## Our Branching Strategy
 
@@ -20,12 +20,12 @@ We are following GitHub Flow:
 3. Code review by other members.
 4. After it has been thoroughly reviewed, we can merge the branch to the master branch. If there is a merge conflict, then resolve conflicts through GitLab, or resolve it manually/locally.
 
-## [Architecture](https://code.cs.umanitoba.ca/3350-winter-2021-a02/group-2/my-group-pal/-/blob/master/ARCHITECTURE.md)
+## [Architecture](https://github.com/wynonagcc/my-grocery-pal/blob/master/ARCHITECTURE.md)
 
-## [Iteration 1 Worksheet](https://code.cs.umanitoba.ca/3350-winter-2021-a02/group-2/my-group-pal/-/blob/master/i1_worksheet.md)
+## [Iteration 1 Worksheet](https://github.com/wynonagcc/my-grocery-pal/blob/master/i1_worksheet.md)
 
-## [Iteration 2 Worksheet](https://code.cs.umanitoba.ca/3350-winter-2021-a02/group-2/my-group-pal/-/blob/master/i2_worksheet.md)
+## [Iteration 2 Worksheet](https://github.com/wynonagcc/my-grocery-pal/blob/master/i2_worksheet.md)
 
-## [Iteration 3 Worksheet](https://code.cs.umanitoba.ca/3350-winter-2021-a02/group-2/my-group-pal/-/blob/master/i3_worksheet.md)
+## [Iteration 3 Worksheet](https://github.com/wynonagcc/my-grocery-pal/blob/master/i3_worksheet.md)
 
-## [Retrospective for Iteration 3](https://code.cs.umanitoba.ca/3350-winter-2021-a02/group-2/my-group-pal/-/blob/master/RETROSPECTIVE.md)
+## [Retrospective for Iteration 3](https://github.com/wynonagcc/my-grocery-pal/blob/master/RETROSPECTIVE.md)
